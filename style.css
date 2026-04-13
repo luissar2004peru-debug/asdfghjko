@@ -1,0 +1,120 @@
+body {
+  background-color: #0d0f14;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+/* MAIN LAYOUT - MOBILE FIRST */
+.main-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* HERO */
+.hero {
+  background: url('https://images.unsplash.com/photo-1542751371-adc38448a05e') center/cover no-repeat;
+  height: 300px;
+  border-radius: 15px;
+  display: flex;
+  align-items: flex-end;
+  padding: 20px;
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(0,0,0,0.8), transparent);
+  border-radius: 15px;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.price {
+  font-weight: bold;
+}
+
+/* SIDEBAR */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* ITEM */
+.game {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px;
+  border-radius: 10px;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* IMAGEN */
+.game img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* TEXTO */
+.game span {
+  font-size: 14px;
+}
+
+/* HOVER */
+.game:hover {
+  background: #1f232b;
+}
+
+/* ACTIVO */
+.game.active {
+  background: #2a2f38;
+}
+
+
+.game {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  background: #1a1d24;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.game:hover {
+  background: #2a2f38;
+}
+
+.game.active {
+  background: #2a2f38;
+}
+
+.game img {
+  width: 50px;
+  border-radius: 5px;
+}
+
+/* DESKTOP ≥1024px */
+@media (min-width: 1024px) {
+  .main-layout {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    align-items: start;
+  }
+
+  .hero {
+    height: 400px;
+  }
+}
